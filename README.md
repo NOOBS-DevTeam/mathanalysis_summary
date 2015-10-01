@@ -31,5 +31,7 @@ $ git merge limits_bullshit_theorems
 $ git push orgin master
 ```
 4) я пытаюсь её вставить в книгу так, чтобы не нарушить логику; сливаю вашу ветку в мастер
+
 5) ???
+
 6) ПРОФИТ
