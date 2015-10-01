@@ -1,0 +1,49 @@
+% В этом файле мы настраиваем LaTeX под наши цели
+% За основу взят предыдущий проект на LaTeX, в котором не было комментов
+% (я это к тому, что не стоит доверять комментам здесь)
+
+\ProvidesPackage{style}
+
+\usepackage{latexsym} 
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[russian]{babel} % это всё русские буковки
+\usepackage{graphicx} % вставка картинок
+\usepackage{array}
+\usepackage{ulem} % ??
+\usepackage{fancyhdr} % красивый рендеринг страницы
+\usepackage{amsmath} % для матана
+%\usepackage{ntheorem} % для матана
+\usepackage{listings} % Листинги с кодом
+\usepackage{hyperref} % Ссылочки
+
+% Настройка листингов с кодом
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    numbers=left,
+    tabsize=4,
+    texcl=true
+}
+
+% Дефайним конструкции
+%\newtheorem*{mydef}{}
+%\newtheorem*{theorem}{Теорема}
+
+% Всякие отсупы
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.5in
+\headsep=0.25in 
+
+\linespread{1} % Пробелы между строк
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0.4pt} % хедеры и футеры
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt} % Удаляем все отступы между абзацами (имхо так лучше)
+
+\author{Владимир Милосердов, Владимир Шабанов}
+\title{Конспекты по матанализу}
