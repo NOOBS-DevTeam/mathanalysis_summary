@@ -1,3 +1,25 @@
 \chapter{Введение в пределы}
-\section{Определение по Гейне}
-$\forall \epsilon > 0 \exists N : \forall n > N: a_n \in \lor$
+\section{Предел последовательности}
+\subsection{Определение по Гейне}
+Пусть имеется последовательность $a_n$. Тогда если начиная с некоторго элемента под индексом $N$ каждый следующий элемент $a_n,$ где $n>N$ будет входить в $\varepsilon$-окрестность некоторой точки $A$, то говорят, что последовательность имеет предел и он равен $A$. \newline
+
+$\forall \varepsilon > 0, \exists N : \forall n > N: a_n \in \mathring{U_\varepsilon}(A)$\newline
+Примеры:\newline
+1. Пусть $a_n:=n^2$, тогда \newline
+$\displaystyle \lim_{n \to +\infty} a_n = +\infty $
+
+\section{Предел функции}
+\subsection{Определение по Гейне}
+Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любой сходящейся в точке $a$ последовательности $x_n$ множество соответсвующих значений $y_n = f(x_n), при n \neq 0$ стремится к $A$.\newline
+
+$\displaystyle \forall n \in \mathbb{N}, \lim_{n \to x_0} x_n = a$ \newline
+$\displaystyle \lim_{n \to a} f(x_n) = A$
+
+\subsection{Определение по Коши}
+Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любого $\varepsilon > 0$ найдется $\delta > 0$ такое, что для любого аргуманта $x$ такого, что $0 < |x - a| < \delta$ выполняется неравенство $|f(x) - A| < \varepsilon $ \newline
+
+$\displaystyle \lim_{x \to a} f(x) = A \ \Leftrightarrow \ \forall \varepsilon > 0 : \ \exists \delta > 0: \ \forall x : \ 0 < |x - a| < \delta \ \Rightarrow \ |f(x) - A| < \varepsilon $\newline
+
+\subsection{Доказательство эквивалентности определений по Коши и по Гейне}
+Докажем от противного. Пусть $\displaystyle A = \lim_{x \to x_0} f(x)$ (по Гейне) и он не равен пределу по Коши. Т.е. (из определения по Коши):\newline
+$\exists \varepsilon > 0:\ \forall \delta > 0:\ \exists x_{\delta} \in X\ |x_{\delta} - x_0| < \delta,\  |f(x_{\delta}) - A| \geq \varepsilon$ \newline
