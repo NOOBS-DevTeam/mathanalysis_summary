@@ -1,12 +1,12 @@
 \chapter{Предел функции}
 \section{Определение по Гейне}
-Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любой сходящейся в точке $a$ последовательности $x_n$ множество соответсвующих значений $y_n = f(x_n), при n \neq 0$ стремится к $A$.\newline
+Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любой сходящейся в точке $a$ последовательности $x_n$ множество соответсвующих значений $y_n = f(x_n),$ при$ n \neq 0$ стремится к $A$.\newline
 
 $\displaystyle \forall n \in \mathbb{N}, \lim_{n \to x_0} x_n = a$ \newline
 $\displaystyle \lim_{n \to a} f(x_n) = A$
 
 \section{Определение по Коши}
-Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любого $\varepsilon > 0$ найдется $\delta > 0$ такое, что для любого аргуманта $x$ такого, что $0 < |x - a| < \delta$ выполняется неравенство $|f(x) - A| < \varepsilon$ \newline
+Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любого $\varepsilon > 0$ найдется $\delta > 0$ такое, что для любого аргуманта $x$ такого, что $0 < |x - a|<\delta$ выполняется неравенство $|f(x) - A| < \varepsilon$ \newline
 
 $\displaystyle \lim_{x \to a} f(x) = A \ \Leftrightarrow \ \forall \varepsilon > 0 : \ \exists \delta > 0: \ \forall x : \ 0 < |x - a| < \delta \ \Rightarrow \ |f(x) - A| < \varepsilon $\newline
 
@@ -36,7 +36,7 @@ $\varphi(x) \in U_{\varepsilon}(a)$ и $\psi(x) \in U_{\varepsilon}(a)$. Т.е. 
 \subsection{От Гейне к Коши}
 Докажем от противного. Пусть $\displaystyle A = \lim_{x \to a} f(x)$ (по Гейне) и он не равен пределу по Коши. Т.е. (из определения по Коши):\newline
 $\exists \varepsilon > 0:\ \forall \delta > 0:\ \exists x_{\delta} : \ 0<|x_{\delta} - a| < \delta$ и$\  |f(x_{\delta}) - A| \geq \varepsilon$ \newline
-Рассмотрим $\delta = \frac{1}{n},\ где n \in \mathbb{N}$, обозначим последовательность значений в точке $\delta$ через $x_n$. Тогда имеем:\newline
+Рассмотрим $\delta = \frac{1}{n},\ $ где $ n \in \mathbb{N}$, обозначим последовательность значений в точке $\delta$ через $x_n$. Тогда имеем:\newline
 $0 < |x_n - a| < \frac{1}{n}$, где $0 \to 0$ и $\frac{1}{n} \to 0$.
 Из строгости неравенства следует $x_n \neq a$, а по теореме о трёх миллиционерах имеем:\newline
 $|x_n - a| \to 0 \Rightarrow x_n \to a$, поэтому из определения по Гейне $f(x_n) \to A$, но по построению (т.к. $|f(x_{\delta}) - A| \geq \varepsilon$) $f(x_n) \not\to A$\newline\newline
