@@ -1,12 +1,10 @@
 \chapter{Введение в пределы}
 \section{Предел последовательности}
-\subsection{Определение по Гейне}
+\subsection{Определение}
 Пусть имеется последовательность $a_n$. Тогда если начиная с некоторго элемента под индексом $N$ каждый следующий элемент $a_n,$ где $n>N$ будет входить в $\varepsilon$-окрестность некоторой точки $A$, то говорят, что последовательность имеет предел и он равен $A$. \newline
-
-$\forall \varepsilon > 0, \exists N : \forall n > N: a_n \in \mathring{U_\varepsilon}(A)$\newline
-Примеры:\newline
-1. Пусть $a_n:=n^2$, тогда \newline
-$\displaystyle \lim_{n \to +\infty} a_n = +\infty $
+$\forall \varepsilon > 0, \exists N : \forall n > N: a_n \in \mathring{U_\varepsilon}(A)$
+\begin{mydef}Последовательность -- \textbf{сходящеяся}, если она имеет предел.\end{mydef}
+\begin{mydef}Последовательность -- \textbf{расходящеяся}, если у нее нет предела\end{mydef}
 
 \section{Предел функции}
 \subsection{Определение по Гейне}
@@ -16,10 +14,43 @@ $\displaystyle \forall n \in \mathbb{N}, \lim_{n \to x_0} x_n = a$ \newline
 $\displaystyle \lim_{n \to a} f(x_n) = A$
 
 \subsection{Определение по Коши}
-Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любого $\varepsilon > 0$ найдется $\delta > 0$ такое, что для любого аргуманта $x$ такого, что $0 < |x - a| < \delta$ выполняется неравенство $|f(x) - A| < \varepsilon $ \newline
+Пределом функции $f(x)$ в точке $a$ называется точка $A$, если для любого $\varepsilon > 0$ найдется $\delta > 0$ такое, что для любого аргуманта $x$ такого, что $0 < |x - a| < \delta$ выполняется неравенство $|f(x) - A| < \varepsilon$ \newline
 
 $\displaystyle \lim_{x \to a} f(x) = A \ \Leftrightarrow \ \forall \varepsilon > 0 : \ \exists \delta > 0: \ \forall x : \ 0 < |x - a| < \delta \ \Rightarrow \ |f(x) - A| < \varepsilon $\newline
 
+\subsection{Теорема о двух миллиционерах}
+Функция, "зажатая"\ между двумя функциями, имеющими одиннаковый предел имеет такой же предел.\newline
+$\begin{cases}\varphi(x) \leq f(x) \leq \psi(x), \forall x \\ \displaystyle \lim_{x \to a} \varphi(x) = A
+\\ \displaystyle \lim_{x \to a} \psi(x) = A\end{cases}$ $\Longrightarrow$ \qquad $\displaystyle \lim_{x \to a} f(x) = A$\newline\newline
+
+Доказательство:\newline
+Прибавим к каждой части неравенства $\varphi(x) \leq f(x) \leq \psi$ по $-A$:\newline $\varphi(x) - A \leq f(x) - A \leq \psi(x) - A$. Из предыдущего неравенства и рисунка\newline 
+ \begin{center}
+  \begin{tikzpicture}[thick]
+    \draw[thick, <->](0.5,0)--(9.5,0);
+    \foreach \x/\xtext in {2/$\varphi(x)$, 5/$f(x)$, 8/$\psi(x)$}
+      \draw(\x,3pt)--(\x,-3pt) node[below] {\xtext};
+    \foreach \x/\xtext in {1/$A_1$, 3.5/$A_2$, 6.5/$A_3$, 9/$A_4$}
+      \draw(\x, 1.5pt)--(\x,-1.5pt) node[above] {\xtext};
+  \end{tikzpicture}
+ \end{center}
+  очевидно, что для любых допустимых взаимных расположений точек $A,\  \varphi(x),\  \psi(x),\  f(x)$ верно следующее неравенство:\newline
+$(1)\quad |f(x) - A| \leq \max(|\varphi(x) - A|,\ |\psi(x) - a|)$\newline
+Т.к. $\displaystyle \lim_{x \to a} \varphi(x) = \lim_{x \to a} \psi(x) = A$, то $\forall \varepsilon > 0$ существует $\varepsilon$-окрестность $U_a$ и\newline
+$\varphi(x) \in U_{\varepsilon}(a)$ и $\psi(x) \in U_{\varepsilon}(a)$. Т.е. $|\varphi(x) - A| < \varepsilon$ и $|\psi(x) - A| < \varepsilon$.\newline
+Тогда из (1) следует: $|f(x) - A| < \varepsilon$ из чего согласно определению предела по Коши следует, что $\displaystyle \lim_{x \to a} f(x) = A$, что и требовалось доказать.
+
 \subsection{Доказательство эквивалентности определений по Коши и по Гейне}
-Докажем от противного. Пусть $\displaystyle A = \lim_{x \to x_0} f(x)$ (по Гейне) и он не равен пределу по Коши. Т.е. (из определения по Коши):\newline
-$\exists \varepsilon > 0:\ \forall \delta > 0:\ \exists x_{\delta} \in X\ |x_{\delta} - x_0| < \delta,\  |f(x_{\delta}) - A| \geq \varepsilon$ \newline
+\subsubsection{От Гейне к Коши}
+Докажем от противного. Пусть $\displaystyle A = \lim_{x \to a} f(x)$ (по Гейне) и он не равен пределу по Коши. Т.е. (из определения по Коши):\newline
+$\exists \varepsilon > 0:\ \forall \delta > 0:\ \exists x_{\delta} : \ 0<|x_{\delta} - a| < \delta$ и$\  |f(x_{\delta}) - A| \geq \varepsilon$ \newline
+Рассмотрим $\delta = \frac{1}{n},\ где n \in \mathbb{N}$, обозначим последовательность значений в точке $\delta$ через $x_n$. Тогда имеем:\newline
+$0 < |x_n - a| < \frac{1}{n}$, где $0 \to 0$ и $\frac{1}{n} \to 0$.
+Из строгости неравенства следует $x_n \neq a$, а по теореме о трёх миллиционерах имеем:\newline
+$|x_n - a| \to 0 \Rightarrow x_n \to a$, поэтому из определения по Гейне $f(x_n) \to A$, но по построению (т.к. $|f(x_{\delta}) - A| \geq \varepsilon$) $f(x_n) \not\to A$\newline\newline
+Получили противоречие, значит если функция имеет предел по Гейне, то его можно определить и по Коши.
+
+\subsubsection{От Коши к Гейне}
+Пусть $\displaystyle A = \lim_{x \to a} f(x)$ по Коши. Т.е.\newline
+$\displaystyle\ \forall \varepsilon > 0 : \ \exists \delta > 0: \ \forall x : \ 0 < |x - a| < \delta \ \Rightarrow \ |f(x) - A| < \varepsilon $\newline
+Выберем произвольную последовательность  $x_n$  такую, что  $\displaystyle \lim_{n \to +\infty} x_n = a$. Т.к. $x_n$ стремится к $a$, то для любого $\delta$ > 0 найдется такой номер (обозначим его $n_\delta$), начиная с которго $\forall n>n_\delta$ будет выполнятся неравенство $|f(x_n) - A|<\varepsilon$, что по Коши равносильно $\displaystyle \lim_{n \to +\infty} f(x_n) = A$
