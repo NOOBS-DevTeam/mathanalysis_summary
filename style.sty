@@ -15,6 +15,7 @@
 \usepackage{fancyhdr} % красивый рендеринг страницы
 \usepackage{amsmath} % для матана
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{ntheorem} % для матана
 \usepackage{listings} % Листинги с кодом
 \usepackage{hyperref} % Ссылочки
@@ -22,7 +23,12 @@
 \usepackage{dcolumn}   % needed for some tables
 \usepackage{bm}        % for math
 \usepackage{tikz}
+\usepackage[a4paper]{geometry} 
+\usepackage{tikzpagenodes}
 \usetikzlibrary{arrows}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 % Настройка листингов с кодом
 \lstset{
@@ -52,6 +58,11 @@
 \renewcommand\footrulewidth{0.4pt}
 
 \setlength\parindent{0pt} % Удаляем все отступы между абзацами (имхо так лучше)
+\newcommand{\fixheader}[1] {
+    \fancyhf{}
+    \fancyhead[RO,LE]{\MakeUppercase{#1}}
+    \fancyhead[RE,LO]{\MakeUppercase{\chaptername}\ \thechapter}
+}
 
-\author{Владимир Милосердов, Владимир Шабанов}
+\author{Владимир Милосердов, Владимир Шабанов, Шумилов Пётр}
 \title{Конспекты по матанализу}
